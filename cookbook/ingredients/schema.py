@@ -2,13 +2,13 @@ import graphene
 from graphene_django.types import DjangoObjectType
 from cookbook.ingredients.models import Category, Ingredient
 
-class CategoryType(DjangoObjetType):
+class CategoryType(DjangoObjectType):
     class Meta:
         model = Category
         
 class IngredientType(DjangoObjectType):
     class Meta:
-        model: Ingredient
+        model = Ingredient
         
 class Query(object):
     all_categories = graphene.List(CategoryType)
